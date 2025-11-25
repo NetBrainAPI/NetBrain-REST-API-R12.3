@@ -4,7 +4,7 @@
 ## ***GET*** /V1/CMDB/fs/list
 Call this API to get the list of Front Server, including their base information and connected status.
 <br>
-As retrieving the connection status of FSC requires starting of the Worker Server, this API may be time-consuming.
+As retrieving the connection status of FS requires starting of the Worker Server, this API may be time-consuming.
 
 ## Detail Information
 
@@ -58,7 +58,7 @@ As retrieving the connection status of FS requires starting of the Worker Server
 |alias| string | Hostname of FS. |
 |registered| bool | Checks whether the FS is registered. |
 |registeredTime| DateTime | Registration Time of FS. |
-tenantInfo| object | Tenant Info of FS. |
+tenantInfo| object | Tenant Info. |
 |tenantInfo.id| string | ID of the Tenant. |
 |tenantInfo.name| string | Name of the Tenant. |
 |connected| bool | The connected status of FS. |
@@ -89,7 +89,7 @@ tenantInfo| object | Tenant Info of FS. |
     "statusDescription": "Success."
 }
 ```
-
+# Full Example
 ```python
 import requests
 import time

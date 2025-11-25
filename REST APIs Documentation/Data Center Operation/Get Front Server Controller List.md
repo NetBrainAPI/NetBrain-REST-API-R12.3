@@ -59,7 +59,7 @@ As retrieving the connection status of FSC requires starting of the Worker Serve
 |port| integer | Port of FSC. |
 |timeout| DateTime | Timeout of FSC. |
 |desc| string | Description of FSC. |
-tenantInfo| object | Tenant Info of FSC. |
+tenantInfo| object | Tenant Info. |
 |tenantInfo.id| string | ID of the Tenant. |
 |tenantInfo.name| string | Name of the Tenant. |
 |connected| bool | The connected status of FSC. |
@@ -117,7 +117,7 @@ tenantInfo| object | Tenant Info of FSC. |
 }
 ```
 
-
+# Full Example
 ```python
 import requests
 import time
