@@ -35,25 +35,26 @@ Call this API to add a list of target ip addresses as seeds to an <b>existing</b
 |seeds.privilegePassword | string  | Specify the password to enter the privilege mode of the devices.  |
 |seeds.designatedCredentials | bool  | Determine whether the API only uses the credentials you have specified. If false, the API will use credentials in network settings.  |
 |seeds.snmpCommunityString | string  | The SNMP community of the devices. |
-|seeds.frontServerOrGroupAlias | string  | Specify the NetBrain front server or front server group to access live network by alias. <br> Currently, this value can be retrieved from `alias` value from DB > NGSystem.FrontServerAndGroup, or via `Front Server Hostname` from Sytem Management > Front Server Controllers.   |
+|seeds.frontServerOrGroupId | string  | Specify the NetBrain front server or front server group to access live network by alias. <br> This value can be found in Shared Device Settings. |
+
 
 > ***Example***
 
 
 
 ```python
-{
+body={
   "seeds": [
     {
-      "mgmtIP": "string",
+      "mgmtIP": "10.1.13.2",
       "cliType": 0,
-      "userName": "NetBrain",
-      "password": "NetBrain",
-      "privilegeUsername": "string",
-      "privilegePassword": "string",
-      "designatedCredentials": true,
+      "userName": "username",
+      "password": "password",
+      "privilegeUsername": "user",
+      "privilegePassword": "pwd",
+      "designatedCredentials": True,
       "snmpCommunityString": "string",
-      "frontServerOrGroupAlias": "string"
+      "frontServerOrGroupId": "testFS"
     }
   ]
 }
@@ -180,7 +181,7 @@ body={
       "privilegePassword": "pwd",
       "designatedCredentials": True,
       "snmpCommunityString": "string",
-      "frontServerOrGroupAlias": "BURWPLTG1021"
+      "frontServerOrGroupId": "testFS"
     }
   ]
 }
