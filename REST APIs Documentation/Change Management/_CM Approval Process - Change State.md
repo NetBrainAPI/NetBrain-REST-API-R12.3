@@ -6,7 +6,7 @@
 This API call is used to set CM Runbook approval state example - approve or reject.
 
 ## Detail Information
-> **Title** : Approve a change management request<br>
+> **Title** : Approve A Change Management Request<br>
 
 > **Version** : 06/26/2019<br>
 
@@ -113,10 +113,9 @@ try:
 except Exception as e:
     print (str(e)) 
 ```
-API Response:
-
+```python
     {"runbookUrl":"http://192.168.28.173/map.html?t=823e096b-093a-10f1-1471-21a9a5ff509c&d=af4581fd-a705-4ddf-a878-fd4c6f304b96&id=378d70a2-f3e1-76c1-42fa-2bb088c1bda2&rba=9948608d-c755-d1e7-b5d1-325b917952b0","statusCode":790200,"statusDescription":"Success."}
-    
+```
 
 # cURL Code from Postman
 

@@ -81,7 +81,7 @@ try:
         result = response.json()
         print (result)
     else:
-        print ("Failed to Get Execution Status! - " + str(response.text))
+        print ("Failed to Get Change Managament Execution Status! - " + str(response.text))
     
 except Exception as e:
     print (str(e)) 
