@@ -182,6 +182,12 @@ To view the full list of all REST APIs, please refer to [REST APIs Documentation
 5) [Get Module Attributes API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Module%20Management/Get%20Module%20Attributes%20API.md)<br>
 6) [Set Module Attributes API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Module%20Management/Set%20Module%20Attributes%20API.md)
 
+### [Network Definition APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/tree/main/REST%20APIs%20Documentation/Network%20Definition)
+1) [Create Network Definition](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Network%20Definition/Create%20Network%20Definition.md)<br>
+2) [Delete Network Definition](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Network%20Definition/Delete%20Network%20Definition.md)<br>
+3) [Get Network Definition](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Network%20Definition/Get%20Network%20Definition.md)<br>
+4) [Update Network Definition](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Network%20Definition/Update%20Network%20Definition.md)<br>
+
 ### [Network Setting](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/tree/main/REST%20APIs%20Documentation/Network%20Setting) 
 1) [Add Network Settings API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Add%20Network%20Settings%20API.md)<br>
 2) [Delete Network Settings API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Delete%20Network%20Settings%20API.md)<br>
