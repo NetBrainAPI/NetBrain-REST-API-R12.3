@@ -35,16 +35,16 @@ Call this API to create a Network Change Management Task with nodes and function
 |defineChangeNodesconfigletTemplate^|array| The script <b>template name</b> for network change. <br>Only applies if the `configlet` field is empty. |
 |defineChangeNodes.rollback^|array| The rollback script. |
 |defineChangeNodes.rollbackTemplate^|array| The script <b>template name</b> for rollback script. <br>Only applies if the `rollback` field is empty|
-|defineChangeNodes.devices*|array| Array of device name. <br> If no devices exists, the CM creation will fail. <br>e.g. `['dev1', 'dev2]` |
-|templateVars^|string| Only applies for  Change Management created from a <b>template-based</b> runbook template. |
+|defineChangeNodes.devices*|array| Array of device name. <br> If no devices exists, the CM creation will fail. <br>e.g. `['dev1', 'dev2']` |
+|templateVars^|object| Only applies for  Change Management created from a <b>template-based</b> runbook template. |
 ||||
 |templateVars.singleVars|array of object| For instantiation of the single template variables. |
 |templateVars.singleVars.name|template variable name| It is imperative the user knows the exact name by opening a runbook template on NetBrain UI. <br>The <b>name</b> specified in the API must match the name on UI. <br>`_TargetDevices` is a built-in variable name.|
 |templateVars.singleVars.values|array of string| Template Value.|
 ||||
-|templateVars.singleVars|array of object| For instantiation of the table template variables. |
-|templateVars.singleVars.tableName|template variable name| Variable name of the table variable.|
-|templateVars.singleVars.columns|array of string| <br><table><tr><th>Name</th><th>Type</th><th>Description</th></tr> <tr><td>name</td><td>Column name</td><td>User must check the actual column name on UI</td></tr> <tr><td>type</td><td>One of the following:<br>string, int, float, bool, device, interface</td><td>User must check the actual column type on UI</td></tr> <tr><td>values</td><td>array of string</td><td> </td></tr> <tr></table>|
+|templateVars.tableVars|array of object| For instantiation of the table template variables. |
+|templateVars.tableVars.tableName|string| Variable name of the table variable.|
+|templateVars.tableVars.columns|array of objects| <br><table><tr><th>Name</th><th>Type</th><th>Description</th></tr> <tr><td>name</td><td>Column name</td><td>User must check the actual column name on UI</td></tr> <tr><td>type</td><td>One of the following:<br>string, int, float, bool, device, interface</td><td>User must check the actual column type on UI</td></tr> <tr><td>values</td><td>array of string</td><td> </td></tr> <tr></table>|
 
 > **Example of `templateVars`**
 ```python
