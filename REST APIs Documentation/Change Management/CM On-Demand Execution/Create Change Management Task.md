@@ -29,21 +29,21 @@ Call this API to create a Network Change Management Task with nodes and function
 |runbookTemplate^|string| Change Management runbook template ID or Path. |
 |mapPath^|string| Path to existing map, or where the new map will be created. <br> Default location: `Public/Network Changes/{cmname}/{timestamp}`|
 |createIncident^|bool| Whether or not to create an incident for this Change Management Task. <br> Default: `False` |
-|defineChangeNodes*|array of object| Settings for the execution nodes in the runbook. |
-|defineChangeNodes.nodeName|string| Name of the node. <br> Default: Name of the first execution node. |
+|defineChangeNodes*|array of object| Settings for the `Define Change` nodes in the runbook. |
+|defineChangeNodes.nodeName|string| Name of `Define Change` node of the runbook. <br> Default: Name of the first `Define Change` node. |
 |defineChangeNodes.configlet^|array| The network change script. |
-|defineChangeNodesconfigletTemplate^|array| The script <b>template name</b> for network change. |
+|defineChangeNodesconfigletTemplate^|array| The script <b>template name</b> for network change. <br>Only applies if the `configlet` field is empty. |
 |defineChangeNodes.rollback^|array| The rollback script. |
-|defineChangeNodes.rollbackTemplate^|array| The script <b>template name</b> for rollback script. |
-|defineChangeNodes.devices*|array| Array of device name. <br>e.g. `['dev1', 'dev2]` |
-|templateVars^|string| Only applies for Change Management created from a <b>template-based</b> runbook template. |
+|defineChangeNodes.rollbackTemplate^|array| The script <b>template name</b> for rollback script. <br>Only applies if the `rollback` field is empty|
+|defineChangeNodes.devices*|array| Array of device name. <br> If no devices exists, the CM creation will fail. <br>e.g. `['dev1', 'dev2]` |
+|templateVars^|string| Only applies for  Change Management created from a <b>template-based</b> runbook template. |
 ||||
 |templateVars.singleVars|array of object| For instantiation of the single template variables. |
-|templateVars.singleVars.name|template variable name| It is imperative the user knows the exact name by opening a runbook template on NetBrain UI. <br>The <b>name</b> specified in the API must match the name on UI. |
+|templateVars.singleVars.name|template variable name| It is imperative the user knows the exact name by opening a runbook template on NetBrain UI. <br>The <b>name</b> specified in the API must match the name on UI. <br>`_TargetDevices` is a built-in variable name.|
 |templateVars.singleVars.values|array of string| Template Value.|
 ||||
 |templateVars.singleVars|array of object| For instantiation of the table template variables. |
-|templateVars.singleVars.tableName|template variable name| It is imperative the user knows the exact name by opening a runbook template on NetBrain UI. <br>The <b>name</b> specified in the API must match the name on UI. |
+|templateVars.singleVars.tableName|template variable name| Variable name of the table variable. <br> It is imperative the user knows the exact name by opening a runbook template on NetBrain UI. <br>The <b>name</b> specified in the API must match the name on UI. |
 |templateVars.singleVars.columns|array of string| <br><table><tr><th>Name</th><th>Type</th><th>Description</th></tr> <tr><td>name</td><td>Column name</td><td>User must check the actual column name on UI</td></tr> <tr><td>type</td><td>One of the following:<br>string, int, float, bool, device, interface</td><td>User must check the actual column type on UI</td></tr> <tr><td>values</td><td>array of string</td><td> </td></tr> <tr></table>|
 
 > **Example of `templateVars`**

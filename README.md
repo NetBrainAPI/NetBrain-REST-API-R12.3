@@ -10,7 +10,7 @@ To view the full list of all REST APIs, please refer to [REST APIs Documentation
 
 ## New APIs in this version
 1) [Network Definition APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/tree/main/REST%20APIs%20Documentation/Network%20Definition) <br>
-
+2) [Get All Network Settings API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Network%20Setting/Get%20All%20Network%20Settings.md)<br>
 
 
 ## Section 1) Golden Use Case Templates
@@ -191,11 +191,12 @@ To view the full list of all REST APIs, please refer to [REST APIs Documentation
 ### [Network Setting](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/tree/main/REST%20APIs%20Documentation/Network%20Setting) 
 1) [Add Network Settings API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Add%20Network%20Settings%20API.md)<br>
 2) [Delete Network Settings API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Delete%20Network%20Settings%20API.md)<br>
-3) [Get Check Device Count in Network Setting API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Get%20Check%20Device%20Count%20in%20Network%20Setting.md)<br>
-4) [Get Devices of a Network Setting API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Get%20Devices%20of%20a%20Network%20Setting%20API.md)<br>
-5) [Get Network Settings API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Get%20Network%20Settings%20API.md)<br>
-6) [Update Device Count in Network Setting API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Update%20Device%20Count%20in%20Network%20Setting.md)<br>
-7) [Update Network Settings API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Update%20Network%20Settings%20API.md)
+3) [Get All Network Settings API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Network%20Setting/Get%20All%20Network%20Settings.md)<br>
+4) [Get Check Device Count in Network Setting API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Get%20Check%20Device%20Count%20in%20Network%20Setting.md)<br>
+5) [Get Devices of a Network Setting API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Get%20Devices%20of%20a%20Network%20Setting%20API.md)<br>
+6) [Get Network Settings API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Get%20Network%20Settings%20API.md)<br>
+7) [Update Device Count in Network Setting API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Update%20Device%20Count%20in%20Network%20Setting.md)<br>
+8) [Update Network Settings API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Update%20Network%20Settings%20API.md)
 
 ### [Path Browser](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/tree/main/REST%20APIs%20Documentation/Path%20Browser)
 1) [Get Saved Paths](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Path%20Browser/Get%20Saved%20Paths%20API.md)
