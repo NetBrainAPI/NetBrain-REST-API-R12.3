@@ -39,10 +39,10 @@ Call this API to create a Network Change Management Task with nodes and function
 |templateVars^|object| Only applies for  Change Management created from a <b>template-based</b> runbook template. |
 ||||
 |templateVars.singleVars|array of object| For instantiation of the single template variables. |
-|templateVars.singleVars.name|template variable name| It is imperative the user knows the exact name by opening a runbook template on NetBrain UI. <br>The <b>name</b> specified in the API must match the name on UI. <br>`_TargetDevices` is a built-in variable name.|
+|templateVars.singleVars.name|string name| It is imperative the user knows the exact name by opening a runbook template on NetBrain UI. <br>The <b>name</b> specified in the API must match the name on UI. <br>`_TargetDevices` is a built-in variable name.|
 |templateVars.singleVars.values|array of string| Template Value.|
 ||||
-|templateVars.tableVars|array of object| For instantiation of the table template variables. |
+|templateVars.tableVars|string| For instantiation of the table template variables. |
 |templateVars.tableVars.tableName|string| Variable name of the table variable.|
 |templateVars.tableVars.columns|array of objects| <br><table><tr><th>Name</th><th>Type</th><th>Description</th></tr> <tr><td>name</td><td>Column name</td><td>User must check the actual column name on UI</td></tr> <tr><td>type</td><td>One of the following:<br>string, int, float, bool, device, interface</td><td>User must check the actual column type on UI</td></tr> <tr><td>values</td><td>array of string</td><td> </td></tr> <tr></table>|
 
@@ -73,7 +73,7 @@ Call this API to create a Network Change Management Task with nodes and function
     "columns":[
     {
       "name":"col1",
-      "type":"string1",
+      "type":"string",
       "values":["stringvar"]
      },
      {

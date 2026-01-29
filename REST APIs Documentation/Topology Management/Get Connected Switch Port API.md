@@ -2,15 +2,15 @@
 # Topology API Design
 
 ## ***GET*** /V1/CMDB/Topology/Devices/{ip}/ConnectedSwitchPort
-Call this API to get the connected layer 2 switch port whihc specified by management.
+This API is used to retrieve the connected layer 2 switch port specified by management.
 
 ## Detail Information
 
 > **Title** : Get Connected Switch Port API<br>
 
-> **Version** : 02/01/2019.
+> **Version** : 28/01/2026.
 
-> **API Server URL** : http(s)://IP address of NetBrain Web API Server/ServicesAPI/API/V1/CMDB/Topology/Devices/{ip}/ConnectedSwitchPort
+> **API Server URL** : http(s)://IP address of NetBrain Web API Server/ServicesAPI/API/V1/CMDB/Topology/Devices/ConnectedSwitchPort
 
 > **Authentication** : 
 
@@ -28,7 +28,7 @@ Call this API to get the connected layer 2 switch port whihc specified by manage
 |**Name**|**Type**|**Description**|
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
-|ip* | string  | The IP address of a end system. |
+|ip* | string  | The IP address of an end system. |
 
 ## Headers
 
