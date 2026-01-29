@@ -23,7 +23,7 @@ Call this API to create a Network Change Management Task with nodes and function
 ## Request body(****required***)
 |**Name**|**Type**|**Description**|
 |------|------|------|
-|<img width=100/>|<img width=100/>|<img width=500/>|
+|<img width=100/>|<img width=100/>|<img width=600/>|
 |||* - required<br />^ - optional|
 |name*|string| Change Management Task name. |
 |runbookTemplate^|string| Change Management runbook template ID or Path. |
