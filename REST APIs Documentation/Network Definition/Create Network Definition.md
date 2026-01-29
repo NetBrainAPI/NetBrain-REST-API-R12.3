@@ -27,7 +27,6 @@ This API is used to create a Network Definition.
 |devSubTypeName*|string| Device Type Name. |
 |devDriverName*|string| Device Driver Name. |
 |ipAddrRange*|string| IP Address Range. |
-|isRegx^|bool| Default: `True` |
 
 
 ## Parameters(****required***)
@@ -60,6 +59,7 @@ This API is used to create a Network Definition.
 |statusDescription| string | The explanation of the status code.  |
 
 # Examples:
+## Example 1
 ```python
 full_url = nb_url + "/ServicesAPI/API/V1/network-definition"
 headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
@@ -68,8 +68,33 @@ headers["Token"]=token
 data = {
     "devSubTypeName": "Cisco Router",
     "devDriverName": "Cisco Router",
-    "ipAddrRange": "192.168.32.100",
-    "isRegx": False
+    "ipAddrRange": "192.168.32.100"
+}
+try:
+    response = requests.post(full_url, headers = headers, data = json.dumps(data), verify = False)
+    if response.status_code == 200:
+        result = response.json()
+        print (result)
+    else:
+        print ("Failed to Create Network Definition! - " + str(response.text))
+    
+except Exception as e:
+    print (str(e)) 
+```
+```python
+{'success': True, 'statusCode': 790200, 'statusDescription': 'Success.'}
+```
+
+## Example 2
+```python
+full_url = nb_url + "/ServicesAPI/API/V1/network-definition"
+headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+headers["Token"]=token
+
+data = {
+    "devSubTypeName": "Cisco Router",
+    "devDriverName": "Cisco Router",
+    "ipAddrRange": "172.24.31.0-172.24.32.0"
 }
 try:
     response = requests.post(full_url, headers = headers, data = json.dumps(data), verify = False)

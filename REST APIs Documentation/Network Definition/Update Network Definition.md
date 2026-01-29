@@ -28,7 +28,6 @@ This API is used to update the existing Network Definition.
 |devSubTypeName*|string| Device Type Name. |
 |devDriverName*|string| Device Driver Name. |
 |ipAddrRange*|string| IP Address Range. |
-|isRegx^|bool| Default: `True` |
 
 
 ## Parameters(****required***)
@@ -70,8 +69,7 @@ data = {
     "ID":"bf94645f-e0a6-486a-84da-3cb633416370",
     "devSubTypeName": "APC UPS",
     "devDriverName": "APC UPS",
-    "ipAddrRange": "172.24.31.0",
-    "isRegx": False
+    "ipAddrRange": "172.24.31.0"
 }
 try:
     response = requests.put(full_url, headers = headers, data = json.dumps(data), verify = False)

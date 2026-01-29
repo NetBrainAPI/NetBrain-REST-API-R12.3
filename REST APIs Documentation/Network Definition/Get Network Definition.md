@@ -28,8 +28,8 @@ This API is used to retrieve the existing Network Definition.
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
 |||* - required<br />^ - optional|
-|pageIndex^|int| Page index <br>Default: `1` |
-|pageSize^|int| Page size <br>Default: `100` |
+|pageIndex^|int| Page Index. <br>Default: `1` |
+|pageSize^|int| Page Size. <br>Default: `100` |
 
 ## Headers
 

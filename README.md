@@ -2,19 +2,16 @@
 
 # Netbrain REST API Documentation
 
-Version 12.1<br>
+Version 12.3<br>
 To view details about Integration Workflows with other platforms, please refer to [Platform Integration Documentation](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/tree/main/Platform%20Integration%20Documentation). 
 Integration Workflow includes workflows such as `Trigger Diagnosis`, where NetBrain is triggered from ticketing and monitoring tools to generate map URLs, and `Single Panel of Glass`, where data from ticketing and monitoring tools is overalyed on NetBrain Map.<br>
 To view details about use cases which can be implemented with NetBrain REST APIs, please refer to [Golden Use Case Templates](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/tree/main/Golden%20Use%20Case%20Templates).<br>
 To view the full list of all REST APIs, please refer to [REST APIs Documentation](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/tree/main/REST%20APIs%20Documentation).<br>
 
 ## New APIs in this version
-1) [Login API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Authentication%20and%20Authorization/Login%20API.md) (Updated methods) <br>
-2) [Get Device's Current Baseline Data Table](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Devices%20Management/Get%20Device's%20Current%20Baseline%20Data%20Table.md)
-3) [Update CLI Login Credential API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/REST%20APIs%20Documentation/Network%20Setting/Update%20CLI%20Login%20Credential%20API.md)
-4) [ADT (Automation Data Table) APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/tree/main/REST%20APIs%20Documentation/ADT%20(Automation%20Data%20Table))
-5) [AAM (Application Assurance Module) APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/tree/main/REST%20APIs%20Documentation/AAM%20(Application%20Assurance%20Module))
-6) [Data Center Operation APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/tree/main/REST%20APIs%20Documentation/Data%20Center%20Operation)
+1) [Network Definition APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/tree/main/REST%20APIs%20Documentation/Network%20Definition) <br>
+
+
 
 ## Section 1) Golden Use Case Templates
 1) [Get Path By Calling APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.1/blob/main/Golden%20Use%20Case%20Templates/Get%20Path%20By%20Calling%20APIs.md)<br>
