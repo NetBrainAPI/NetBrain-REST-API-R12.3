@@ -2,7 +2,7 @@
 # Network Setting API Design
 
 ## ***GET*** /V1/CMDB/NetworkSettings/All
-This API is used to get All Network Settings of the domain, including Front Server, Jumpbox, SNMP String, Private Key, Telnet/SSH Login, and Privilege Login
+This API is used to get All Network Settings of the domain, including Front Server, Jumpbox, SNMP String, Private Key, Telnet/SSH Login, and Privilege Login.
 
 ## Detail Information
 

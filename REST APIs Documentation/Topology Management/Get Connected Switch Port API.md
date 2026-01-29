@@ -8,9 +8,9 @@ This API is used to retrieve the connected layer 2 switch port specified by mana
 
 > **Title** : Get Connected Switch Port API<br>
 
-> **Version** : 28/01/2026.
+> **Version** : 02/01/2019.
 
-> **API Server URL** : http(s)://IP address of NetBrain Web API Server/ServicesAPI/API/V1/CMDB/Topology/Devices/ConnectedSwitchPort
+> **API Server URL** : http(s)://IP address of NetBrain Web API Server/ServicesAPI/API/V1/CMDB/Topology/Devices/{ip}/ConnectedSwitchPort
 
 > **Authentication** : 
 
