@@ -43,7 +43,7 @@ Call this API to create a Network Change Management Task with nodes and function
 |templateVars.singleVars.values|array of string| Template Value.|
 ||||
 |templateVars.singleVars|array of object| For instantiation of the table template variables. |
-|templateVars.singleVars.tableName|template variable name| Variable name of the table variable. <br> It is imperative the user knows the exact name by opening a runbook template on NetBrain UI. <br>The <b>name</b> specified in the API must match the name on UI. |
+|templateVars.singleVars.tableName|template variable name| Variable name of the table variable.|
 |templateVars.singleVars.columns|array of string| <br><table><tr><th>Name</th><th>Type</th><th>Description</th></tr> <tr><td>name</td><td>Column name</td><td>User must check the actual column name on UI</td></tr> <tr><td>type</td><td>One of the following:<br>string, int, float, bool, device, interface</td><td>User must check the actual column type on UI</td></tr> <tr><td>values</td><td>array of string</td><td> </td></tr> <tr></table>|
 
 > **Example of `templateVars`**
