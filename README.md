@@ -9,7 +9,7 @@ To view details about use cases which can be implemented with NetBrain REST APIs
 To view the full list of all REST APIs, please refer to [REST APIs Documentation](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/tree/main/REST%20APIs%20Documentation).<br>
 
 ## New APIs in this version
-1) [External Authentication](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/tree/main/REST%20APIs%20Documentation/External%20Authentication)<br>
+1) [External Authentication APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/tree/main/REST%20APIs%20Documentation/External%20Authentication)<br>
 2) [Get All Network Settings API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Network%20Setting/Get%20All%20Network%20Settings.md)<br>
 3) [Network Definition APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/tree/main/REST%20APIs%20Documentation/Network%20Definition) <br>
 
