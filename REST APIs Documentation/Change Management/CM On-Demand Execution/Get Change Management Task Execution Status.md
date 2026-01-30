@@ -76,7 +76,7 @@ headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 headers["Token"] = token
 
 try:
-    response = requests.get(full_url, headers=headers, data = data, verify=False)
+    response = requests.get(full_url, headers=headers, verify=False)
     if response.status_code == 200:
         result = response.json()
         print (result)
