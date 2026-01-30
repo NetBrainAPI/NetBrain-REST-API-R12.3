@@ -10,8 +10,9 @@ To view the full list of all REST APIs, please refer to [REST APIs Documentation
 
 ## New APIs in this version
 1) [External Authentication APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/tree/main/REST%20APIs%20Documentation/External%20Authentication)<br>
-2) [Get All Network Settings API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Network%20Setting/Get%20All%20Network%20Settings.md)<br>
-3) [Network Definition APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/tree/main/REST%20APIs%20Documentation/Network%20Definition) <br>
+2) [File Download APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/tree/main/REST%20APIs%20Documentation/File%20Download)
+3) [Get All Network Settings API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Network%20Setting/Get%20All%20Network%20Settings.md)<br>
+4) [Network Definition APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/tree/main/REST%20APIs%20Documentation/Network%20Definition) <br>
 
 
 
@@ -175,6 +176,12 @@ To view the full list of all REST APIs, please refer to [REST APIs Documentation
 3) [Save External Authentication](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/External%20Authentication/Save%20External%20Authentication.md)
 4) [Search Group](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/External%20Authentication/Search%20Group.md)
 
+
+### [File Download](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/tree/main/REST%20APIs%20Documentation/File%20Download)
+1) [Download Files](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/File%20Download/Download%20Files.md) <br>
+2) [Get All File List](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/File%20Download/Get%20All%20File%20List.md)<br>
+3) [Get Folder ID by Folder Path](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/File%20Download/Get%20Folder%20ID%20by%20Folder%20Path.md)<br>
+4) [Get List of FIle IDs by Folder Path](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/File%20Download/Get%20List%20of%20File%20IDs%20by%20Folder%20Path.md)<br>
 
 ### [Incident Report](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/tree/main/REST%20APIs%20Documentation/Incident%20Report)
 1) [Export API Triggered Task Report API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Incident%20Report/Export%20API%20Triggered%20Task%20Report.md)<br>
