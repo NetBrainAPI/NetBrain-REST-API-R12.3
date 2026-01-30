@@ -6,7 +6,7 @@ This API is used to get the List of File ID by Folder Path.
 
 ## Detail Information
 
-> **Title** : Get File ID List by Folder Path API<br>
+> **Title** : Get List of File IDs by Folder Path API<br>
 
 > **Version** : 29/01/2026.
 
@@ -83,7 +83,7 @@ try:
         result = response.json()
         print (result)
     else:
-        print ("Failed to Get FileID List by folderPath! - " + str(response.text))
+        print ("Get List of File IDs by Folder Path API! - " + str(response.text))
 except Exception as e:
     print (str(e))
 ```
