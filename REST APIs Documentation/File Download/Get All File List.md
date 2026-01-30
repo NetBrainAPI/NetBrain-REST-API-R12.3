@@ -66,7 +66,7 @@ This API is used to Get All List of Files.
 |id| string | The ID of a folder in the file tree. |
 |name| string | Name of a file. |
 |originalId| string | The ID of a specific dashboard or file. <br> It is used for Map or Dashboard type only. |
-|type | integer | Retrieved file types. <br> ▪ `0`: Folder<br> ▪ `11`: Map<br> ▪ `21`: Dashboard ▪ `999` - Windows files |
+|type | integer | Retrieved file types. <br> ▪ `0`: Folder<br> ▪ `11`: Map<br> ▪ `21`: Dashboard<br> ▪ `999` - Windows files |
 |statusCode| integer | Code issued by NetBrain server indicating the execution result.  |
 |statusDescription| string | The explanation of the status code. |
 
