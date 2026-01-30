@@ -47,12 +47,7 @@ This API is used to Download Files.
 | token | string  | Authentication token, get from Login API. |
 
 ## Response
-
-|**Name**|**Type**|**Description**|
-|------|------|------|
-|<img width=100/>|<img width=100/>|<img width=500/>|
-|statusCode| int | The returned status code of executing the API. |
-|statusDescription| string | The explanation of the status code. |
+When successful, the API call will download the file.
 
 # Full Example: 
 The file will be downloaded in current directory where the script is run, as `downloaded_file.bin`.
