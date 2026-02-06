@@ -52,23 +52,23 @@ Call this API to get External Authentication in NetBrain System Management.
 |**Name**|**Type**|**Description**|
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
-|externalAuth|object||
-|externalAuth.businessObj|object||
-|bexternalAuth.businessObj.address|string|Name of the group|
-|externalAuth.businessObj.group_root|string|Path of the group|
-|externalAuth.businessObj.user_root|string|System Roles of the group|
-|externalAuth.businessObj.connectType|int||
-|externalAuth.businessObj.port|int|Total number of groups|
-|externalAuth.businessObj.connectName|string|Indicates whether there are more groups|
-|externalAuth.businessObj.groups|array of objects||
-|externalAuth.businessObj.attributeMappings|array of objects||
-|externalAuth.id|string||
-|externalAuth.alias|string||
-|externalAuth.desc|string||
-|externalAuth.type|int||
-|externalAuth.enabled|bool||
-|externalAuth.displayServerName|string||
-|externalAuth.needUpdated|bool||
+|externalAuth|object|External object information|
+|externalAuth.businessObj|object|External business object|
+|bexternalAuth.businessObj.address|string|External Server Address|
+|externalAuth.businessObj.group_root|string|Organizational Unit (OU) that the target user groups are located in. e.g. `ou=G1`|
+|externalAuth.businessObj.user_root|string|Organizational Unit (OU) where the target user accounts are located in. e.g. `ou=G1`|
+|externalAuth.businessObj.connectType|int|0 - Regular <br>1 - SSL|
+|externalAuth.businessObj.port|int|External Server Port|
+|externalAuth.businessObj.connectName|string| Username to connect to the server. <br>It is highly recommended to use the domain name/username format in the Connect Username fiel to avoid unexpected problems. e.g. test/administrator <br> When more than 500 user groups are managed on LDAP server, the username used to connect to the server must be the <b>Manager</b>. e.g. CN=Manager,dc=test,dc=com.|
+|externalAuth.businessObj.groups|array of objects|Selected Group Info|
+|externalAuth.businessObj.attributeMappings|array of objects|Mapping Attribute|
+|externalAuth.id|string|External Authentication ID|
+|externalAuth.alias|string|External Authentication Name|
+|externalAuth.desc|string|External Authentication Description|
+|externalAuth.type|int|External Authentication Type<br>`1` - AD<br>`2` - LDAP <br>`3` - TACACS <br>`4` - SAML|
+|externalAuth.enabled|bool|Indicates to enable or disable External Authentication|
+|externalAuth.displayServerName|string|External Server Address Information|
+|externalAuth.needUpdated|bool|External Authentication Upgrade|
 |statusCode| int | The returned status code of executing the API. |
 |statusDescription| string | The explanation of the status code. |
 

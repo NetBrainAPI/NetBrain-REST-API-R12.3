@@ -24,17 +24,17 @@ Call this API to save the External Authentication in NetBrain System Management.
 |**Name**|**Type**|**Description**|
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
-|businessObj* | object |  |
-|address* | string |  |
-|group_root | string |   |
-|user_root | string |  |
-|connectType* | int | Connect Type  |
-|port | int |Port Number |
-|connectName | string ||
-|groups | array of object ||
-|isSystemAdmin|bool|Indicates whether the user is a System Admin.|
-|isSystemManager|bool|Indicates whether the user is a System Manager.|
-|isUserManager|bool|Indicates whether the user is a User Manager.|
+|businessObj* | object | External Object Information |
+|address* | string | External Server Address |
+|group_root^ | string | Group Root |
+|user_root^ | string | User Root |
+|connectType* | int | 0 - Regular <br>1 - SSL |
+|port* | int |External Server Port |
+|connectName* | string | Connect Username |
+|groups* | array of object |Selected Group Info|
+|isSystemAdmin*|bool|Indicates whether the user is a System Admin.|
+|isSystemManager*|bool|Indicates whether the user is a System Manager.|
+|isUserManager*|bool|Indicates whether the user is a User Manager.|
 
 ## Parameters(****required***)
 

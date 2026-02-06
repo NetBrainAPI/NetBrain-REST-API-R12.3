@@ -24,17 +24,17 @@ Call this API to Search Group in NetBrain System Management.
 |**Name**|**Type**|**Description**|
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
-|type* | int |  |
-|pageIndex* | int |  |
-|keyword | string |   |
-|businessObj | object |  |
-|businessObj.address* | string |   |
-|businessObj.group_root | string | |
-|businessObj.user_root | string ||
-|businessObj.connectType | int ||
-|businessObj.port|int||
-|businessObj.connectName|string||
-|businessObj.connectPwd|string||
+|type* | int | External Authentication Type<br>`1` - AD<br>`2` - LDAP <br>`3` - TACACS <br>`4` - SAML |
+|pageIndex* | int | Page Index to retrieve data by |
+|keyword^ | string | Search keyword |
+|businessObj* | object | External Object Information |
+|businessObj.address* | string | External Server Address  |
+|businessObj.group_root^ | string |Group Root |
+|businessObj.user_root^ | string |User Root |
+|businessObj.connectType* | int |0 - Regular <br>1 - SSL |
+|businessObj.port*|int|External Server Port|
+|businessObj.connectName*|string|Username to connect to the server. <br>It is highly recommended to use the domain name/username format in the Connect Username fiel to avoid unexpected problems. e.g. test/administrator <br> When more than 500 user groups are managed on LDAP server, the username used to connect to the server must be the <b>Manager</b>. e.g. CN=Manager,dc=test,dc=com.|
+|businessObj.connectPwd*|string|Password of the user to connect to the server|
 
 ## Parameters(****required***)
 

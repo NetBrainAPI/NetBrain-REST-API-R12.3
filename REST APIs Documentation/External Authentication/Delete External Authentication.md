@@ -27,7 +27,7 @@ Call this API to delete External Authentication in NetBrain System Management.
 |**Name**|**Type**|**Description**|
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
-|alias* | string |  |
+|alias* | string | Name of the External Authentication |
 
 ## Headers
 
