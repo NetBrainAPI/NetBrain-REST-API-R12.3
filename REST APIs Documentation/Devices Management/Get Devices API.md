@@ -38,7 +38,7 @@ This API is used to get devices and their attributes data in batch. The response
 |skip|integer|The amount of records to be skipped. <br>The value cannot be negative.  <br>If the value is negative, API throws exception `{"statusCode":791001,"statusDescription":"Parameter 'skip' cannot be negative"}`. <br>No upper bound for this parameter.|
 |limit|integer|The up limit amount of device records to return per API call. <br>The value cannot be negative. <br>If the value is negative, API throws exception `{"statusCode":791001,"statusDescription":"Parameter 'limit' cannot be negative"}`. <br>No upper bound for this parameter. If the parameter is not specified in API call, it means there is not limitation setting on the call.|
 |||If only `skip` value is provided, returns the device list with 50 devices information start from the skip number. <br>If only `limit` value is provided, returns from the first device in DB. <br>If both `skip` and `limit` values are provided, returns as required. <br>Error exceptions follows each parameter's description.<br>`Skip` and `limit` parameters are based on the search result from DB. The `limit` value's valid range is 10 - 100; if the assigned value exceeds the range, the server will respond with an error message: `Parameter 'limit' must be greater than or equal to 10 and less than or equal to 100.`  |
-|filter|json|If specified, returns the matched device list with device attributes. <br>Supported filtering attributes: `name`, `assetTag`, `contact`, `descr`, `layer`, `loc`, `mgmtIP`, `model`, `site` (complete site path; e.g. `"My Network\\\Burlington"`), `sn`, `subTypeName`, `vendor`, `ver`, `hasBGPConfig`, `hasOSPFConfig`, `hasEIGRPConfig`, `hasISISConfig`, `hasMulticastConfig`, `hasOTVConfig`, `isHA`, `hasBPEConfig`, `isTransparent`, `isCluster`, `hasVXLANConfig`, `hasVPLSConfig`, `alias` (the alias name of device Telnet/SSH settings)|
+|filter|json|If specified, returns the matched device list with device attributes. <br>All single GDR Property including customized ones can be used (except geolocation) <br><br>Note:<br>• `site`: please use the complete site path; e.g. `"My Network\\\Burlington"`<br>• `alias`: refers to the alias name of device Telnet/SSH settings|
 |||Only supports AND operator, when multiple filter attributes are specified in JSON.<br>If provided with invalid data format, returns error `invalid filter input`.|
 
 ## Headers
@@ -520,6 +520,49 @@ except Exception as e:
 }
 ```
 
+# Example 6: Using `filter` with customized GDR
+Via <b> Tenant Management > GDR Data Configuration</b>, create the customized GDR: `mgmtHostname`
+
+```python
+full_url = nb_url + "/ServicesAPI/API/V1/CMDB/Devices"
+headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+headers["Token"]=token
+
+filter1 = {
+    "mgmtHostname":"mgmt123", #customized GDR property
+    "name":"AWS-CSR10v"
+}
+
+query = {
+    'filter': json.dumps(filter1),
+    'version':1
+}
+try:
+    response = requests.get(full_url, headers=headers, params = query, verify=False)
+    if response.status_code == 200:
+        result = response.json()
+        print (result)
+    else:
+        print("Get Devices failed! - " + str(response.text))
+except Exception as e:
+    print (str(e)) 
+```
+```python
+{
+  "devices": [
+    {
+      "id": "020e0271-e336-4e41-891d-e6a3a029e2d0",
+      "mgmtIP": "18.223.162.2",
+      "name": "AWS-CSR1000v",
+      "subTypeName": "Cisco Router",
+      "fDiscoveryTime": "2026-02-09T20:15:26Z",
+      "lDiscoveryTime": "2026-02-10T18:57:21Z"
+    }
+  ],
+  "statusCode": 790200,
+  "statusDescription": "Success."
+}
+```
 
 # cURL Code from Postman:
 This cURL command is based on Example 1
