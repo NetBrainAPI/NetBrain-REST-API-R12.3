@@ -553,7 +553,7 @@ except Exception as e:
     {
       "id": "020e0271-e336-4e41-891d-e6a3a029e2d0",
       "mgmtIP": "18.223.162.2",
-      "name": "AWS-CSR1000v",
+      "name": "AWS-CSR10v",
       "subTypeName": "Cisco Router",
       "fDiscoveryTime": "2026-02-09T20:15:26Z",
       "lDiscoveryTime": "2026-02-10T18:57:21Z"
