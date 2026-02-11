@@ -29,8 +29,9 @@ Call this API to get the value for an attribute of a device, get all attributes 
 |**Name**|**Type**|**Description**|
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
+|||`*` - indicates mandatory field <br> `^` - indicates optional field|
 |hostname* | string  | The hostname of the target device.  |
-|attributeName | string  | Optionnal. The name of the attribute that you want to get its value, get all attributes if the attribute name is not specifed.<br>Please note that the attribute name here is case sensitive and not the name displayed in the Device Details pane of NetBrain IE system. See Applicable Device Attributes for system built-in device attributes. |
+|attributeName^ | string  | The name of the attribute that you want to get its value, get all attributes if the attribute name is not specifed.<br>Please note that the attribute name here is case sensitive and not the name displayed in the Device Details pane of NetBrain IE system. See Applicable Device Attributes for system built-in device attributes. |
 
 ## Headers
 
