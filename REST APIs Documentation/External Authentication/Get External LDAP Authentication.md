@@ -55,11 +55,11 @@ Call this API to get External Authentication in NetBrain System Management.
 |externalAuth|object|External object information|
 |externalAuth.businessObj|object|External business object|
 |bexternalAuth.businessObj.address|string|External Server Address|
-|externalAuth.businessObj.group_root|string|Organizational Unit (OU) that the target user groups are located in. e.g. `ou=G1`|
-|externalAuth.businessObj.user_root|string|Organizational Unit (OU) where the target user accounts are located in. e.g. `ou=G1`|
+|externalAuth.businessObj.group_root|string|Organizational Unit (OU) that the target user groups are located in. <br>e.g. `ou=G1`|
+|externalAuth.businessObj.user_root|string|Organizational Unit (OU) where the target user accounts are located in. <br>e.g. `ou=G1`|
 |externalAuth.businessObj.connectType|int|0 - Regular <br>1 - SSL|
 |externalAuth.businessObj.port|int|External Server Port|
-|externalAuth.businessObj.connectName|string| Username to connect to the server. <br>It is highly recommended to use the domain name/username format in the Connect Username fiel to avoid unexpected problems. e.g. test/administrator <br> When more than 500 user groups are managed on LDAP server, the username used to connect to the server must be the <b>Manager</b>. e.g. CN=Manager,dc=test,dc=com.|
+|externalAuth.businessObj.connectName|string| Username to connect to the server. <br><br>It is highly recommended to use the domain name/username format in the Connect Username fiel to avoid unexpected problems. <br>e.g. `test/administrator` <br><br> When more than 500 user groups are managed on LDAP server, the username used to connect to the server must be the <b>Manager</b>.<br> e.g. `CN=Manager,dc=test,dc=com`.|
 |externalAuth.businessObj.groups|array of objects|Selected Group Info|
 |externalAuth.businessObj.attributeMappings|array of objects|Mapping Attribute|
 |externalAuth.id|string|External Authentication ID|
