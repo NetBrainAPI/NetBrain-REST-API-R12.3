@@ -67,7 +67,7 @@ As a result, calling this API with the request parameter <i>`version`</i> specif
 |token|string|Authentication token, get from login API.|
 
 ## Response
-** Note that the response will differ based on the parameter. Please refer to the below examples to see the different format of responses.
+** Note that the response will differ based on the parameter. Please refer to the below examples to see the different formats of responses.
 
 |**Name**|**Type**|**Description**|
 |------|------|------|
