@@ -2,7 +2,8 @@
 # External Authentication API Design
 
 ## ***POST*** /V1/CMDB/ExternalAuthtication/SearchGroup
-Call this API to Search Group in NetBrain System Management.
+Call this API to Search Group in NetBrain System Management.<br>
+This API supports AD, and LDAP Authentications.
 
 ## Detail Information
 

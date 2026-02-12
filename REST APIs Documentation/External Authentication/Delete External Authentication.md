@@ -2,7 +2,8 @@
 # External Authentication API Design
 
 ## ***DELETE*** /V1/CMDB/ExternalAuthtication{?alias}
-Call this API to delete External Authentication in NetBrain System Management.
+Call this API to delete External Authentication in NetBrain System Management.<br>
+This API supports AD, and LDAP Authentications.
 
 ## Detail Information
 
