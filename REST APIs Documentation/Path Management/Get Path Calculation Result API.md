@@ -2,15 +2,17 @@
 # Path API Design
 
 ## ***GET*** /V1/CMDB/Path/Calculation/{taskID}/Result	
-Call this API to get the hop information of a path calculated through the CalcPath API. 
+Call this API to get the hop information of the calculated path through the `Calculate Path API`. 
 
-If the Calculation Path task is not finished yet or failed, user will get an error with messsage reminding.which means you don't need to wait anymore before trying to query the result.
+If the `Calculation Path` task is not yet finished or failed, the API will prompt an error with message accordingly. 
 
-All directed links in the result consists of a directed path grapth, which contains all possible reachable paths from the original source to the destination specified in path calculation
+All directed links in the result consists of a directed path graph, which contains all possible reachable paths from the original source to the destination specified in path calculation.
+
+<b>Note</b>: It is recommended to use Get Path Calculation Overview API as its result offers more details.
 
 ## Detail Information
 
-> **Title** : Get Path Calulation Result API<br>
+> **Title** : Get Path Calculation Result API<br>
 
 > **Version** : 01/30/2019.
 
