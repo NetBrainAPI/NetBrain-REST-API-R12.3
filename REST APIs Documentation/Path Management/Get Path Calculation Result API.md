@@ -2,13 +2,13 @@
 # Path API Design
 
 ## ***GET*** /V1/CMDB/Path/Calculation/{taskID}/Result	
-Call this API to get the hop information of the calculated path through the `Calculate Path API`. 
+Call this API to get the hop information of the calculated path achieved through [Calculate Path API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Path%20Management/Calculate%20Path%20API.md). 
 
-If the `Calculation Path` task is not yet finished or failed, the API will prompt an error with message accordingly. 
+If the [Calculation Path](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Path%20Management/Calculate%20Path%20API.md) task is not yet finished or failed, the API will prompt an error with message accordingly. 
 
 All directed links in the result consists of a directed path graph, which contains all possible reachable paths from the original source to the destination specified in path calculation.
 
-<b>Note</b>: It is recommended to use Get Path Calculation Overview API as its result offers more details.
+***Note:***: It is recommended to use Get Path Calculation Overview API as its result offers more details.
 
 ## Detail Information
 
@@ -160,7 +160,7 @@ try:
         print (result)
     else:
         
-        print ("Get path calulation result failed! - " + str(response.text))
+        print ("Failed to Get Path Calculation Result! - " + str(response.text))
     
 except Exception as e:
     print (str(e)) 

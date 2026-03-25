@@ -3,7 +3,7 @@
 
 ## ***POST*** /V1/CMDB/Path/Calculation
 Call this API to calculate the path from endpoint A (source) to endpoint B (destination). <br> 
-It returns the result of the calculated path in the form of a path ID (a string), which can be used as the input parameter to get each hop information of the path via Get Path Calculation Overview API.
+It returns the result of the calculated path in the form of a path ID (a string), which can be used as the input parameter to get each hop information of the path via [Get Path Calculation Result API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Path%20Management/Get%20Path%20Calculation%20Result%20API.md) or [Get Path Calculation Overview API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Path%20Management/Get%20Path%20Calculation%20Overview%20API.md).
 
 ## Detail Information
 
@@ -35,7 +35,7 @@ It returns the result of the calculated path in the form of a path ID (a string)
 |destPort* | integer  | Specify the destination protocol port If TCP/UDP is selected, such as 23 for telnet. This parameter can be null.  |
 |protocol* | integer  | Specify the application protocol. see list_of_ip_protocol_numbers, such as 4 for IPv4.  |
 |isLive* | bool  | ▪ `False` - Use data From current Baseline<br>▪ `True` - Use data via live access |
-|advanced |object	|advance setting.|
+|advanced |object |advance setting.|
 |advanced.debugMode | bool	|The debug mode of trigger API.|
 |advanced.calcWhenDeniedByACL| bool | Whether to keep calculate when the process been denied by ACL.|
 |advanced.calcWhenDeniedByPolicy |bool |Whether to keep calculate when the process been denied by policy.|
@@ -71,7 +71,8 @@ It returns the result of the calculated path in the form of a path ID (a string)
 |**Name**|**Type**|**Description**|
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
-|taskID| string | The task ID of the calculated path. <br> Use this as `taskID` input parameter in Get Path Calculation Result API or Get Path Calculation Overview API to get the hop information of the path. ||statusCode| integer | The returned status code of executing the API.  |
+|taskID| string | The task ID of the calculated path. <br> Use this as `taskID` input parameter in Get Path Calculation Result API or Get Path Calculation Overview API to get the hop information of the path. |
+|statusCode| integer | The returned status code of executing the API.  |
 |statusDescription| string | The explanation of the status code.  |
 
 > ***Example***
@@ -123,7 +124,7 @@ def calculate_path(Calculate_Path_url, body, headers, token):
             result = response.json()
             return (result)
         else:
-            return ("Create module attribute failed! - " + str(response.text))
+            return ("Failed to Calculate Path! - " + str(response.text))
 
     except Exception as e:
         return (str(e)) 
