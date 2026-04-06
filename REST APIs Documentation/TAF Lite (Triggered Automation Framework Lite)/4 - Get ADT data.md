@@ -9,7 +9,7 @@ PA license is required to use this API.
 
 > **Title** : Get ADT Data<br>
 
-> **Version** : 17/07/2024
+> **Version** : 02/04/2026
 
 > **API Server URL** : http(s):// IP address of your NetBrain Web API Server/ServicesAPI/API/V3/TAF/Lite/adt/data
 
@@ -58,7 +58,10 @@ PA license is required to use this API.
 | token | string  | Authentication token, get from login API. |
 
 ## Response
-The data model returned by each DataType:
+The data model returned by each DataType. <br>
+The following are examples of the returned datatypes that are linked to an ADT for better understanding. <br>
+Therefore, it has the datamodel of each DataTyle along with the information of the ADT; aside from `value`, the `column_name` or other names, e.g. `Interface`, `BGP Enabling`, refer to the column names of the ADT Table that the user designed. <br>
+For more information, please refer to the example below.
 
 <table>
   <tr>
@@ -69,7 +72,8 @@ The data model returned by each DataType:
     <td>String</td>
     <td><pre><code>
 {
-    "value": "hello world"
+    "value": "10.10.10.10",
+    "neighbor (column_name)": "10.10.10.10"
 }
 </code></pre></td>
   </tr>
@@ -85,7 +89,8 @@ The data model returned by each DataType:
     <td>Bool</td>
     <td><pre><code>
 {
-    "value": "true"
+    "value": "false",
+    "BGP Enabling": "false"
 }
 </code></pre></td>
   </tr>
@@ -98,10 +103,11 @@ The data model returned by each DataType:
 </code></pre></td>
   </tr>
   <tr>
-    <td>DateTime</td>
+    <td>Time</td>
     <td><pre><code>
 {
-    "value": "2022-11-15T07:23:39.196Z"
+    "value": "2025-12-05T20:58:08Z",
+    "Last Verified Time": "2025-12-05T20:58:08Z"
 }
 </code></pre></td>
   </tr>
@@ -109,31 +115,35 @@ The data model returned by each DataType:
     <td>Device</td>
     <td><pre><code>
 {
-    "value": "BJ-R1"
+    "value": "BJ-R1",
+    "Device": "PE1"
 }
 </code></pre></td>
   </tr>
   <tr>
-    <td>Interface</td>
+    <td>Device Interface</td>
     <td><pre><code>
 {
-    "value": "BJ*POP - FastEthernet0/0"
+    "value": "BJ*POP - FastEthernet0/0",
+    "Interface": "US-DFW-DC-NXOS-LEAF2 - Ethernet1/4"
 }
 </code></pre></td>
   </tr>
   <tr>
-    <td>DeviceList</td>
+    <td>Device List</td>
     <td><pre><code>
 {
-    "value": ["BJ-3750-1", "BJ-3750-2"]
+    "value": ["74.82.11.2"],
+    "Path Devices": ["74.82.11.2"]
 }
 </code></pre></td>
   </tr>
   <tr>
-    <td>InterfaceList</td>
+    <td>Device Interface List</td>
     <td><pre><code>
 {
-    "value": ["BJ*POP - FastEthernet0/0", "BJ*POP - FastEthernet0/1"]
+    "value": ["74.82.11.2 - Ethernet0"],
+    "Path Hops (Device Interfaces)": ["74.82.11.2 - Ethernet0"]
 }
 </code></pre></td>
   </tr>
@@ -141,9 +151,10 @@ The data model returned by each DataType:
     <td>Map</td>
     <td><pre><code>
 {
-    "id": "mapId 1",
-    "name": "Map Name 1",
-    "url": "map.html?t=1650bf6e-67ed-3c07-3357-b070528c4b19&d=2b662e5d-fe4e-436a-8fa9-c847c1752511&id=1812bd18-633b-4f7d-8e06-8eb5f259660a&maptype=3"
+    "id": "12cb0f07-3304-45f9-8dea-6552e72d9d31",
+    "name": "SJC-DC - ATL-DC (row value 1)",
+    "url": "map.html?t=131c38b8-9518-41a9&d=1fa843cf-4dac-469f-818e-ee6e41d1c0c3&id=12cb0f07-3304-45f9-8dea-6552e79d31&maptype=14",
+    "Path Map": "SJC-DC - ATL-DC (row value 1)"
 }
 </code></pre></td>
   </tr>
@@ -151,10 +162,11 @@ The data model returned by each DataType:
     <td>Site</td>
     <td><pre><code>
 {
-    "id": "site id 1",
-    "name": "Site Name 1",
-    "path": "My Network\\testSummary",
-    "mapUrl": "map.html?t=1650bf6e-67ed-3c07-3357-b070528c4b19&d=2b662e5d-fe4e-436a-8fa9-c847c1752511&id=1812bd18-633b-4f7d-8e06-8eb5f259660a&maptype=3"
+    "id": "c3a91307-60f8-4bb1-bc05-496c737e5290",
+    "name": "NB_BOS_APIC",
+    "path": "My Network\\Auto Site\\ACI\\NB_BOS_APIC",
+    "mapUrl": "map.html?t=131c38b8-9518-4118-8dd1-1ff27b7e38a9&d=1fa843cf-4dac-469f-818e-ee6e44bb1-bc05-496c737e5290&maptype=3",
+    "Leaf Site": "NB_BOS_APIC"
 }
 </code></pre></td>
   </tr>
@@ -162,18 +174,20 @@ The data model returned by each DataType:
     <td>Path</td>
     <td><pre><code>
 {
-    "id": "path template id 1",
-    "name": "path Name 1",
-    "application": "AAM Name"
+    "id": "48e7d9ee-e6a6-4c31-b01a-c4f20a2e868e",
+    "name": "ABC DC (row value 1)",
+    "application": "Collaboration Apps",
+    "Path": "ABC DC (row value 1)"
 }
 </code></pre></td>
   </tr>
   <tr>
-    <td>NI</td>
+    <td>Intent (NI)</td>
     <td><pre><code>
 {
-    "id": "ni id 1",
-    "name": "ni Name 1"
+    "id": "",
+    "name": "",
+    "Monitor Live Interface Rate": ""
 }
 </code></pre></td>
   </tr>
@@ -186,39 +200,6 @@ The data model returned by each DataType:
 </code></pre></td>
   </tr>
 </table>
-
-
-> ***Example***
-
-```python
-[{
-    "niId": "intent1 id",
-    "niName": "intent1 name",
-    "statusCodes": [
-      "intent status code1",
-      "intent status code2"
-    ],
-    "csvs": [ {
-        "fileName": "csv file name1", 
-        "csv": "a1,b1,c1"
-      }],
-    "rawDatas": [
-      {
-        "device": "BJ-R1", 
-        "command": "show config",
-        "rawData": "raw data1"
-      }
-    ],
-    "maps": [
-        {
-            "id": "map id 1",
-            "name": "map Name 1",
-            "url": "map url 1",
-            "type": "Intent Map" //Intent Map; External Map
-        }
-    ]
-}]
-```
 
 # Examples:
 
@@ -327,8 +308,8 @@ if __name__ =="__main__":
         "endpoint": "T123123Z",
         "passKey": "Aaaa$$",
         "filterDevices": [],
-        "columns": ["neighbor", "as"]
         "option": {
+            "autoRefresh": True
         }
     }
     try:
@@ -341,9 +322,285 @@ if __name__ =="__main__":
         print (str(e)) 
 
 ```
-```
-  {'Content-Type': 'application/json', 'Accept': 'application/json', 'Token': 'f91fa2b9-8a69-4ba3-9f25-a7bcd3517849'}
-  {'adtName': 'bgp_as_report', 'columns': [{'name': 'neighbor', 'type': 'String'}, {'name': 'as', 'type': 'String'}], 'rows': [[{'value': '1.1.1.1'}, {'value': '65111'}], [{'value': '1.1.1.2'}, {'value': '65000'}], [{'value': '1.1.1.3'}, {'value': '65000'}], [{'value': '1.1.1.4'}, {'value': '65012'}], [{'value': '1.1.1.5'}, {'value': '64550'}], [{'value': '1.1.1.6'}, {'value': '64550'}], [{'value': '1.1.1.7'}, {'value': '65121'}]], 'summary': 'nn Rows 2 Columns', 'statusCode': 790200, 'statusDescription': 'Success.'}
+```python
+[
+  {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Token": "8268d511-4fd0-4560-a8d6-c64a5ded1f49"
+  },
+  {
+    "adtName": "Critical Application Path",
+    "columns": [
+      {
+        "name": "Path",
+        "type": "Path"
+      },
+      {
+        "name": "Application Name",
+        "type": "String"
+      },
+      {
+        "name": "Path Name",
+        "type": "String"
+      },
+      {
+        "name": "Path Devices",
+        "type": "Device List"
+      },
+      {
+        "name": "Path Hops (Device Interfaces)",
+        "type": "Device Interface List"
+      },
+      {
+        "name": "Inbound Interfaces",
+        "type": "Device Interface List"
+      },
+      {
+        "name": "Outbound Interfaces",
+        "type": "Device Interface List"
+      },
+      {
+        "name": "Source",
+        "type": "String"
+      },
+      {
+        "name": "Destination",
+        "type": "String"
+      },
+      {
+        "name": "Next Hop Check",
+        "type": "Intent"
+      },
+      {
+        "name": "next_hop_macro_var",
+        "type": "String"
+      },
+      {
+        "name": "Delay Check",
+        "type": "Intent"
+      },
+      {
+        "name": "delay_check_macro_var",
+        "type": "String"
+      },
+      {
+        "name": "Path Status",
+        "type": "String"
+      },
+      {
+        "name": "Path Map URL",
+        "type": "String"
+      },
+      {
+        "name": "Path Map",
+        "type": "Map"
+      },
+      {
+        "name": "Last Verified Time",
+        "type": "Time"
+      },
+      {
+        "name": "Path Map URL without HTTPS",
+        "type": "String"
+      }
+    ],
+    "rows": [
+      [
+        {
+          "id": "48e7d9ee-e6a6-4c31-b01a-c4f20a2e868e",
+          "name": "SJC-DC - BOS-DC - Confluence Backup",
+          "application": "Collaboration Apps",
+          "Path": "SJC-DC - BOS-DC - Confluence Backup"
+        },
+        {
+          "value": "Collaboration Apps",
+          "Application Name": "Collaboration Apps"
+        },
+        {
+          "value": "SJC-DC - BOS-DC - Confluence Backup",
+          "Path Name": "SJC-DC - BOS-DC - Confluence Backup"
+        },
+        {
+          "value": [
+            "13.82.11.2"
+          ],
+          "Path Devices": [
+            "13.82.11.2"
+          ]
+        },
+        {
+          "value": [
+            "13.82.11.2 - Ethernet0"
+          ],
+          "Path Hops (Device Interfaces)": [
+            "13.82.11.2 - Ethernet0"
+          ]
+        },
+        {
+          "value": [
+            "13.82.11.2 - Ethernet0"
+          ],
+          "Inbound Interfaces": [
+            "13.82.11.2 - Ethernet0"
+          ]
+        },
+        {
+          "value": [],
+          "Outbound Interfaces": []
+        },
+        {
+          "value": "11.82.11.2",
+          "Source": "11.82.11.2"
+        },
+        {
+          "value": "22.0.0.10",
+          "Destination": "22.0.0.10"
+        },
+        {
+          "id": "22592-30a1-487d-92d4-fd8c95988254",
+          "name": "Path Next Hop Stability Check",
+          "Next Hop Check": "Path Next Hop Stability Check"
+        },
+        {
+          "value": "$dest_route",
+          "next_hop_macro_var": "$dest_route"
+        },
+        {
+          "id": "554f13c9-d06d-49b4-87c6-84bf49a11799",
+          "name": "Operational Status-Path Delay Stability Check",
+          "Delay Check": "Operational Status-Path Delay Stability Check"
+        },
+        {
+          "value": "$target_ip",
+          "delay_check_macro_var": "$target_ip"
+        },
+        {
+          "value": "Failed",
+          "Path Status": "Failed"
+        },
+        {
+          "value": "https://nblive2025.netbrain.com/map.html?t=13518-38a9&d=1fa843cf-4dac-469f-818e-ee6e41d1c0c3&id=5cf177cf-eeb3-46dc-8446-c2ad182e09cd",
+          "Path Map URL": "https://nblive2025.netbrain.com/map.html?t=13b8-9518-38a9&d=1fa843cf-4dac-469f-818e-ee6e41d1c0c3&id=5cf177cf-eeb3-46dc-8446-c2ad182e09cd"
+        },
+        {
+          "id": "7105d970-ba34-4208-b78c-57f6c65542ec",
+          "name": "SJC-DC - BOS-DC - Confluence Backup",
+          "url": "map.html?t=13b8-9518-38a9&d=1fa843cf-4dac-469f-818e-ee6e41d1c0c3&id=7105d970-ba34-4208-b78c-57f6c65542ec&maptype=1",
+          "Path Map": "SJC-DC - BOS-DC - Confluence Backup"
+        },
+        {
+          "value": "2025-11-25T07:52:27Z",
+          "Last Verified Time": "2025-11-25T07:52:27Z"
+        },
+        {
+          "value": "nblive2025.netbrain.com/map.html?t=13b8-9518-38a9&d=8e-ee6e41d1c0c3&id=5cf177cf-eeb3-46dc-8446-c2ad182e09cd",
+          "Path Map URL without HTTPS": "nblive2025.netbrain.com/map.html?t=13b8-9518-38a9&d=1fa843cf-4dac-469f-818e-ee6e41d1c0c3&id=5cf177cf-eeb3-46dc-8446-c2ad182e09cd"
+        }
+      ],
+      ...
+      [
+        {
+          "id": "4f2096-71bb-41d5-8f42-79e61ce5c3d5",
+          "name": "SJC-DC - ATL-DC - Jira Replication",
+          "application": "Collaboration Apps",
+          "Path": "SJC-DC - ATL-DC - Jira Replication"
+        },
+        {
+          "value": "Collaboration Apps",
+          "Application Name": "Collaboration Apps"
+        },
+        {
+          "value": "SJC-DC - ATL-DC - Jira Replication",
+          "Path Name": "SJC-DC - ATL-DC - Jira Replication"
+        },
+        {
+          "value": [
+            "12.82.33.31",
+            "ABC-MLAG-C1",
+            "ABC-EDGE-FW1",
+            "ABC-ISP-PE3",
+            "ABC-ISP-P4"
+          ],
+          "Path Devices": [
+            "13.82.33.31",
+            "ABC-MLAG-C1",
+            "ABC-EDGE-FW1",
+            "ABC-ISP-PE3",
+            "13.82.33.2",
+            "AV-DC-ANET-B-SPINE2",
+            "ABC-MLAG-C2"
+          ]
+        },
+        {
+          "value": [
+            "13.82.33.31 - Ethernet0",
+            "ABC-ISP-P1 - ge-0/0/1.0",
+            "ABC-ISP-P1 - ge-0/0/5.0",
+            "ABC-ISP-P4 - ge-0/0/1.0",
+            "ABC-ISP-P4 - ge-0/0/5.0",
+            "ABC-ISP-PE1 - ge-0/0/1.0",
+            "ABC-ISP-PE1 - ge-0/0/5",
+            "ABC-HA-FW - port2",
+            "ABC-HA-FW - port7",
+            "ABC-HA-FW - port8"
+          ],
+          "Path Hops (Device Interfaces)": [
+            "AV-DC-ANET-B-SPINE2 - Ethernet8",
+            "AV-DC-ANET-B-SPINE2 - Vlan2002",
+            "AV-DC-ANET-LEAF5 - Ethernet1",
+            "AV-DC-ANET-LEAF5 - Ethernet2",
+            "AV-DC-ANET-LEAF5 - Vlan300",
+            "ABC-HA-FW - DC1-to-Site2_0",
+            "ABC-HA-FW - port2",
+            "ABC-HA-FW - port7",
+            "ABC-HA-FW - port8"
+          ]
+        },
+        {
+          "value": [
+            "22.82.33.31 - Ethernet0",
+            "ABC-ISP-P1 - ge-0/0/5.0",
+            "ABC-ISP-P4 - ge-0/0/1.0",
+            "AV-DC-ANET-B-SPINE2 - Vlan2002",
+            "AV-DC-ANET-LEAF5 - Ethernet1",
+            "AV-DC-ANET-LEAF5 - Ethernet2",
+            "ABC-HA-FW - DC1-to-Site2_0",
+            "ABC-HA-FW - port2"
+          ],
+          "Inbound Interfaces": [
+            "111.82.33.31 - Ethernet0",
+            "ABC - ge-0/0/5.0",
+            "ABC-ISP-P4 - ge-0/0/1.0",
+            "ABC-ISP-PE1 - ge-0/0/1.0",
+            "ABC-ISP-PE3 - ge-0/0/6.0",
+            "ABC-HA-FW - DC1-to-Site2_0",
+            "ABC-HA-FW - port2"
+          ]
+        },
+        {
+          "value": [
+            "22.82.33.31 - Ethernet0",
+            "AV-DC-ANET-BGW-R1 - Vlan100",
+            "AV-DC-ANET-B-SPINE1 - Ethernet5",
+            "AV-DC-ANET-B-SPINE2 - Ethernet5",
+            "AV-DC-ANET-LEAF5 - Vlan300",
+            "ABC-HA-FW - port7",
+            "ABC-HA-FW - port8"
+          ],
+          "Outbound Interfaces": [
+            "22.82.33.31 - Ethernet0",
+            "ABC-ISP-P1 - ge-0/0/1.0",
+            "ABC-ISP-P4 - ge-0/0/5.0"
+          ]
+        }
+      ]
+    ],
+    "summary": "16 Rows 18 Columns",
+    "statusCode": 790200,
+    "statusDescription": "Success."
+  }
+]
 ```
 
 # cURL Code from Postman
