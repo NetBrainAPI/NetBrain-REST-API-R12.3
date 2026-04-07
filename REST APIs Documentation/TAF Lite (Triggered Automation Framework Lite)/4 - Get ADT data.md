@@ -99,6 +99,7 @@ For more information, please refer to the example below.
     <td><pre><code>
 {
     "value": "123.456"
+    "column_name": "123.456"
 }
 </code></pre></td>
   </tr>
@@ -121,20 +122,38 @@ For more information, please refer to the example below.
 </code></pre></td>
   </tr>
   <tr>
-    <td>Device Interface</td>
-    <td><pre><code>
-{
-    "value": "BJ*POP - FastEthernet0/0",
-    "Interface": "US-DFW-DC-NXOS-LEAF2 - Ethernet1/4"
-}
-</code></pre></td>
-  </tr>
-  <tr>
     <td>Device List</td>
     <td><pre><code>
 {
     "value": ["74.82.11.2"],
     "Path Devices": ["74.82.11.2"]
+}
+</code></pre></td>
+  </tr>
+  <tr>
+    <td>Node</td>
+    <td><pre><code>
+{
+    "value": "!@#$%^&*()_-=+~`:;.'|\\/[]{}",
+    "column_name": "!@#$%^&*()_-=+~`:;.'|\\/[]{}"
+}
+</code></pre></td>
+  </tr>
+  <tr>
+    <td>Node List</td>
+    <td><pre><code>
+{
+    "value": "11\nASA\\Router",
+    "column_name": "11\nASA\\Router"
+}
+</code></pre></td>
+  </tr>
+  <tr>
+    <td>Device Interface</td>
+    <td><pre><code>
+{
+    "value": "BJ*POP - FastEthernet0/0",
+    "Interface": "US-DFW-DC-NXOS-LEAF2 - Ethernet1/4"
 }
 </code></pre></td>
   </tr>
@@ -155,6 +174,15 @@ For more information, please refer to the example below.
     "name": "SJC-DC - ATL-DC (row value 1)",
     "url": "map.html?t=131c38b8-9518-41a9&d=1fa843cf-4dac-469f-818e-ee6e41d1c0c3&id=12cb0f07-3304-45f9-8dea-6552e79d31&maptype=14",
     "Path Map": "SJC-DC - ATL-DC (row value 1)"
+}
+</code></pre></td>
+  </tr>
+  <tr>
+    <td>Device Group</td>
+    <td><pre><code>
+{
+    "value": "Cisco 9k",
+    "column_name": "Cisco 9k"
 }
 </code></pre></td>
   </tr>
@@ -188,6 +216,24 @@ For more information, please refer to the example below.
     "id": "",
     "name": "",
     "Monitor Live Interface Rate": ""
+}
+</code></pre></td>
+  </tr>
+  <tr>
+    <td>Primary Probe</td>
+    <td><pre><code>
+{
+    "value": "ACI-L3Out-29.Configuration Change",
+    "Primary Node": "ACI-L3Out-29.Configuration Change"
+}
+</code></pre></td>
+  </tr>
+  <tr>
+    <td>Secondary Probe</td>
+    <td><pre><code>
+{
+    "value": "",
+    "Secondary Node": ""
 }
 </code></pre></td>
   </tr>
