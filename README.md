@@ -301,7 +301,6 @@ To view the full list of all REST APIs, please refer to [REST APIs Documentation
 1) [Build L2 Topology API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Topology%20Management/Build%20L2%20Topology%20API.md)<br>
 2) [Build L3 Topology API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Topology%20Management/Build%20L3%20Topology%20API.md)<br>
 3) [Get Connected Switch Port API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Topology%20Management/Get%20Connected%20Switch%20Port%20API.md)<br>
-4) [Get Device Neighbors by Topology Type API Version_1](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Topology%20Management/Get%20Device%20Neighbors%20by%20Topology%20Type%20API%20Version_1.md)
 5) [Get Device Neighbors by Topology Type API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Topology%20Management/Get%20Device%20Neighbors%20by%20Topology%20Type%20API.md)<br>
 6) [Get One IP Table API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Topology%20Management/Get%20One%20IP%20Table%20API.md)
 5) [Get Topology Build Task Status API](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Topology%20Management/Get%20Topology%20Build%20Task%20Status%20API.md)
