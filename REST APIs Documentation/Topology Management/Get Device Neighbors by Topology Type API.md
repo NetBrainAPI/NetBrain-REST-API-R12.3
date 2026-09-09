@@ -2,20 +2,22 @@
 # Topology API Design
 
 ## ***GET*** /V1/CMDB/Topology/Devices/Neighbors
-This API returns the neighbor relationships of devices in the current working domain. For each connection, it returns the neighbor device's hostname and the interface names on both ends of the interface pair. If both the `hostname` and `topoType` parameters are omitted, the API returns results for all devices in the domain.<br><br>
+This API returns the neighbor relationships of devices in the current working domain. For each connection, it returns the neighbor device's hostname and the interface names on both ends of the interface pair.<br><br>
 **Note: The API follows the privilege control of NB system. If there is restriction set by Access Control Policy for the target querying resources, the response will not return queried data.**
 <br><br>
-<b>Important</b>: It is recommended to pass parameter <i>version=1</i> instead of <i>version=0</i>
-<br><br>
+It is recommended to pass parameter <i>version=1</i> instead of <i>version=0</i>
+<br>
+<b>Important</b>: This page describes the `version=1` design of `GET /V1/CMDB/Topology/Devices/Neighbors` - the recommended format.<br>
+For legacy `version=0` design, see
 
 ### Version interaction between URL and request body
-Starting from R12, the multi-version API support was introduced; the <i>URL query parameter version `V`</i> specified in the URL (e.g. API/<b>V1</b>/CMDB/Topology/Devices) represents the NetBrain API version, and also controls the <b>shape of the response payload</b>.
-<br>
-If <i>the request body parameter `version`</i> is <b>not</b> provided, the API version in the URL (e.g. V1, V2, V3) takes precedence and determines the fields of the response by using the latest version logic. <br>
-If <i>the request body parameter `version`</i> <b>is</b> provided, <i>the request body parameter `version`</i> takes precedence when selecting the response format. <br>
-&nbsp; When version=0 is used, it uses the old version logic. <br><br>
-As a result, calling this API with the request parameter <i>`version`</i> specified or not can produce different response fields.
+Starting from R12, the API supports multiple versions. The version segment `V` in the URL path (e.g. <b>V1</b> in API/V1/CMDB/Topology/Devices) identifies the NetBrain API version, and also controls the shape of the response payload.
 
+If the <i>query parameter `version`</i> is <b>not</b> provided, the `V` in the URL path takes precedence and determines the fields of the response using the latest version logic.
+
+If the <i>query parameter `version`</i> is provided, the request body parameter version takes precedence over the URL path when selecting the response format. <br>
+&nbsp; When version=0 is used, the response falls back to the old (pre-multi-version) logic. <br><br>
+As a result, the shape of the API response can differ based on the passed version and query parameters.
 
 ## Detail Information
 
@@ -49,14 +51,14 @@ As a result, calling this API with the request parameter <i>`version`</i> specif
 |**Name**|**Type**|**Description**|
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
-|hostname | list of string  | The device name. Repeat the parameter once per device. <br>e.g. `hostname=US-BOS-R1`, or `hostname=US-BOS-R2&hostname=US-BOS-R3&hostname=US-BOS-R4`|
-|topoType | list of int  | Returns the neighbors in specified topology types:<br> `1`: `L3_Topo_Type`, <br>`2`: `L2_Topo_Type`, <br>`3`: `Ipv6_L3_Topo_Type`, <br>`4`: `VPN_Topo_Type` <br>Repeat the parameter once per value. <br>e.g. `topoType=1`, or `topoType=2&topoType=3&topoType=4`. |
-|||If both `hostname` and `topoType` are passed, but there is no corresponding topology interface on some devices, then API returns `Device xxx doesn't have yyy interface.` <br> <br> If only one input is given, only the given filter will be considered. <br> e.g. only `hostname=US-BOS-R1` - returns all topology type of `US-BOS-R1`.|
-|version | string | This is a minor version number. Value of this parameter is `1`.|
-|skip|integer|The amount of records to be skipped. <br>The value cannot be negative. If the value is negative, API throws exception `{"statusCode":791001,"statusDescription":"Parameter 'skip' cannot be negative"}`. <br> No upper bound for this parameter.|
-|limit|integer|The up limit amount of device records to return per API call. <br>The value cannot be negative. If the value is negative, API throws exception `{"statusCode":791001,"statusDescription":"Parameter 'limit' cannot be negative"}`. <br> The range of this parameter: `10`-`100`. <br><br> default value: `50`|
+|||* - required <br>^ - optional|
+|hostname^ | list of string  | The device name. Repeat the parameter once per device. <br>e.g. `hostname=US-BOS-R1`, or `hostname=US-BOS-R2&hostname=US-BOS-R3&hostname=US-BOS-R4`|
+|topoType* | list of int | Returns the neighbors in specified topology types:<br> `1`: `L3_Topo_Type`, <br>`2`: `L2_Topo_Type`, <br>`3`: `Ipv6_L3_Topo_Type`, <br>`4`: `L3_VPN_Topo_Type`, <br>`5`: `L2_Overlay_Topo_Type` <br>Repeat the parameter once per value. <br>e.g. `topoType=1`, or `topoType=2&topoType=3&topoType=4`. |
+|version^ | string | This is a minor version number. Value of this parameter is `1`.|
+|skip^|integer|The amount of device records to be skipped. <br>The value cannot be negative. If the value is negative, API throws exception `{"statusCode":791001,"statusDescription":"Parameter 'skip' cannot be negative"}`. <br> No upper bound for this parameter.<br><br> default value: `0`|
+|limit^|integer|The up limit amount of device records to return per API call. <br>The range of this parameter: `10`-`100`. Otherwise, API throws exception `{"statusCode":791001,"statusDescription":"Parameter 'limit' must be greater than or equal to 10 and less than or equal to 100"}`. <br><br> default value: `50`|
 |||If only `skip` is provided, returns the rest of the full device list. <br>If only `limit` is provided, returns from the first device in DB. <br>If both `skip` and `limit` are provided, returns as required. Error exceptions follow each parameter's descriptions.<br><br>**Note:** The `skip` and `limit` parameters are based on the device search result, not topology result record.|
-|filterBus | boolean | Without this filter (or when set to `False`), the API returns a list of all neighbors. <br> With this filter set to `True`, the API does not return the group in same link (uplink or downlink) within the same media. |
+|filterBus^ | boolean | Without this filter (or when set to `False`), the API returns a list of all neighbors. <br> With this filter set to `True`, the API does not return the group in same link (uplink or downlink) within the same media. |
 
 ## Headers
 
@@ -76,7 +78,7 @@ As a result, calling this API with the request parameter <i>`version`</i> specif
 | token | string  | Authentication token, get from login API. |
 
 ## Response
-** Note that the response will differ based on the parameter. Please refer to the below examples to see the different formats of responses.
+** Null values of the response properties will be ignored; hence in some cases, some properties will note be contained.
 |**Name**|**Type**|**Description**|
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
@@ -89,56 +91,6 @@ As a result, calling this API with the request parameter <i>`version`</i> specif
 |statusCode| integer | The returned status code of executing the API.  |
 |statusDescription| string | The explanation of the status code.  |
 
-<details>
-<summary><i><b>Example</b></i></summary>
-
-```python
-{
-    "topology":
-    [
-        {   
-            "hostname": "device_1",
-            "neighbors":
-            [
-                {
-                    "interface": "intf_1",
-                    "connected_device":
-                    {
-                        "nbr_device": "device_2",
-                        "nbr_intf": "intf_3"
-                    },
-                    "topology": "L2"
-                }
-				{
-                    "interface": "intf_2",
-                    "connected_device":
-                    {
-                        "nbr_device": "device_3",
-                        "nbr_intf": "intf_4"
-                    },
-                    "topology": "L2"
-                }
-            ]
-        }
-		{   
-            "hostname": "device_4",
-            "neighbors":
-            [
-                {
-                    "interface": "intf_5",
-                    "connected_device":
-                    {
-                        "nbr_device": "device_5",
-                        "nbr_intf": "intf_6"
-                    },
-                    "topology": "L3"
-                }
-        }
-    ]
-}
-```
-
-</details>
 
 # Full Examples:
 
@@ -159,7 +111,7 @@ full_url = nb_url + "/ServicesAPI/API/V1/CMDB/Topology/Devices/Neighbors"
 headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 headers["Token"] = token
 
-hostnames = ["BJ_Acc_Sw4"]
+hostnames = ["US-ORD-EDGE-SW1"]
 topoTypes = [1]
 
 data = {
@@ -205,22 +157,11 @@ except Exception as e:
 ## Example 2: Get All Devices' Topology Information In Current Domain
 
 ```python
-# import python modules 
-import requests
-import time
-import urllib3
-import pprint
-import json
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-# Set the request inputs
-token = "e9c7af7c-eedd-40fb-8b4b-356974a12b91"
-nb_url = "http://192.168.28.143"
 full_url = nb_url + "/ServicesAPI/API/V1/CMDB/Topology/Devices/Neighbors"
 headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 headers["Token"] = token
 
-hostnames = ["US-ORD-EDGE-SW1", "ASA"]
+hostnames = ["US-ORD-EDGE-SW1", "ASA", 'xxx', ...] # get the list of all device hostnames in current domain by calling get device API first.
 topoTypes = [1]
 
 skip = 0
@@ -408,8 +349,7 @@ Input:
         topoType = [] # Cannot be null.
 
 Response:
-    "Failed to Get Neighbors by Topology! - 
-        {'topology': [], 'statusCode': 790200, 'statusDescription': 'Success.'}"
+    "{'statusCode': 791001, 'statusDescription': 'The parameter "topoType" is required.'}"
         
 ```
 
@@ -417,11 +357,10 @@ Response:
 ```python
 Input:
         hostname = "dummy" # No device with a hostname called "dummy"
-        topoType = []
+        topoType = [1]
 
 Response:
-    "Failed to Get Neighbors by Topology! - 
-        {'topology': [], 'statusCode': 790200, 'statusDescription': 'Success.'}"
+    "{'topology': [], 'statusCode': 790200, 'statusDescription': 'Success.'}"
 
 ```
 
@@ -433,5 +372,5 @@ Input:
 
 Response:
     "Failed to Get Neighbors by Topology! - 
-        {'statusCode': 791001, 'statusDescription': "Parameter 'TopoType' value must be greater than 0 and less than 4"}"
+        {'statusCode': 791001, 'statusDescription': "Parameter 'TopoType' value must be greater than 0 and less than 5"}"
 ```
