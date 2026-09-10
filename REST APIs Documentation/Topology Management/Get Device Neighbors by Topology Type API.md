@@ -5,9 +5,11 @@
 This API returns the neighbor relationships of devices in the current working domain. For each connection, it returns the neighbor device's hostname and the interface names on both ends of the interface pair.<br><br>
 **Note: The API follows the privilege control of NB system. If there is restriction set by Access Control Policy for the target querying resources, the response will not return queried data.**
 <br><br>
+
+<b>Important</b>: This page describes the `version=1` design of `GET /V1/CMDB/Topology/Devices/Neighbors` - the recommended format.<br><br>
+
 It is recommended to pass parameter <i>version=1</i> instead of <i>version=0</i>
 <br>
-<b>Important</b>: This page describes the `version=1` design of `GET /V1/CMDB/Topology/Devices/Neighbors` - the recommended format.<br>
 For legacy `version=0` design, see [Get Device Neighbors by Topology Type API_Version_0](https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3/blob/main/REST%20APIs%20Documentation/Topology%20Management/Get%20Device%20Neighbors%20by%20Topology%20Type_Version_0.md)
 .
 ### Version interaction between URL and request body
