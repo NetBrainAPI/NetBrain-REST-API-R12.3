@@ -17,7 +17,7 @@ Starting from R12, the API supports multiple versions. The version segment `V` i
 
 If the <i>query parameter `version`</i> is <b>not</b> provided, the `V` in the URL path takes precedence and determines the fields of the response using the latest version logic.
 
-If the <i>query parameter `version`</i> is provided, the request body parameter version takes precedence over the URL path when selecting the response format. <br>
+If the <i>query parameter `version`</i> is provided, the query parameter version takes precedence over the URL path when selecting the response format. <br>
 &nbsp; When version=0 is used, the response falls back to the old (pre-multi-version) logic. <br><br>
 As a result, the shape of the API response can differ based on the passed version and query parameters.
 
