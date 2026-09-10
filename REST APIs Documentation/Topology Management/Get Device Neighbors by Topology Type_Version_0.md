@@ -12,7 +12,7 @@ For legacy `version=1` design, see [Get Device Neighbors by Topology Type API](h
 
 ## Detail Information
 
-> **Title** : Get Device Neighbors by Topology Type API_Version0<br>
+> **Title** : Get Device Neighbors by Topology Type API_Version_0<br>
 
 > **Version** : 02/01/2019.
 
@@ -39,7 +39,7 @@ For legacy `version=1` design, see [Get Device Neighbors by Topology Type API](h
 |hostname* | list of string  | The devices name, such as ["US-BOS-R1"] or ["US-BOS-R2", "US-BOS-R3", "US-BOS-R4"]|
 |topoType* | list of strings  | Return the neighbors in specified topology types<br> 1: L3_Topo_Type, <br>2: L2_Topo_Type, <br>3: Ipv6_L3_Topo_Type, <br>4: VPN_Topo_Type, <br>such as [1] or [2,3,4].|
 |||If both `hostname` and `topoType` are passed, only the <i>first</i> `hostname` and `topoType` will be used.|
-|version^ | string | Default Value: `0`|
+|version^ | string | version=0 |
 
 ## Headers
 
